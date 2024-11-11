@@ -6,43 +6,75 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		29AEA8A82CC9C7A700DDAA3B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A0FE3A2CBC7C600087C16F /* WidgetKit.framework */; };
+		29AEA8A92CC9C7A700DDAA3B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A0FE3C2CBC7C600087C16F /* SwiftUI.framework */; };
+		29AEA8BA2CC9C7A900DDAA3B /* FlightActivityWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 29AEA8A72CC9C7A700DDAA3B /* FlightActivityWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
-		2927A2892CB47A3100DDBE9F /* PBXContainerItemProxy */ = {
+		29AEA8B82CC9C7A900DDAA3B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2927A2702CB47A3000DDBE9F /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 2927A2772CB47A3000DDBE9F;
-			remoteInfo = "Flight Radar V1";
-		};
-		2927A2932CB47A3100DDBE9F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2927A2702CB47A3000DDBE9F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2927A2772CB47A3000DDBE9F;
-			remoteInfo = "Flight Radar V1";
+			remoteGlobalIDString = 29AEA8A62CC9C7A700DDAA3B;
+			remoteInfo = FlightActivityWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		29A0FE532CBC7C610087C16F /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				29AEA8BA2CC9C7A900DDAA3B /* FlightActivityWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2927A2782CB47A3000DDBE9F /* Flight Radar V1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flight Radar V1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2927A2882CB47A3100DDBE9F /* Flight Radar V1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flight Radar V1Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2927A2922CB47A3100DDBE9F /* Flight Radar V1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flight Radar V1UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29A0FE3A2CBC7C600087C16F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		29A0FE3C2CBC7C600087C16F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		29AEA8A72CC9C7A700DDAA3B /* FlightActivityWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FlightActivityWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2976EC6E2CE1201D009A31E9 /* Exceptions for "Flight Radar V1" folder in "FlightActivityWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				FlightActivityWidgetAttributes.swift,
+			);
+			target = 29AEA8A62CC9C7A700DDAA3B /* FlightActivityWidgetExtension */;
+		};
+		29AEA8BB2CC9C7A900DDAA3B /* Exceptions for "FlightActivityWidget" folder in "FlightActivityWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 29AEA8A62CC9C7A700DDAA3B /* FlightActivityWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		2927A27A2CB47A3000DDBE9F /* Flight Radar V1 */ = {
+		29374DB52CC6C45300B48E17 /* Flight Radar V1 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2976EC6E2CE1201D009A31E9 /* Exceptions for "Flight Radar V1" folder in "FlightActivityWidgetExtension" target */,
+			);
 			path = "Flight Radar V1";
 			sourceTree = "<group>";
 		};
-		2927A28B2CB47A3100DDBE9F /* Flight Radar V1Tests */ = {
+		29AEA8AA2CC9C7A700DDAA3B /* FlightActivityWidget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Flight Radar V1Tests";
-			sourceTree = "<group>";
-		};
-		2927A2952CB47A3100DDBE9F /* Flight Radar V1UITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Flight Radar V1UITests";
+			exceptions = (
+				29AEA8BB2CC9C7A900DDAA3B /* Exceptions for "FlightActivityWidget" folder in "FlightActivityWidgetExtension" target */,
+			);
+			path = FlightActivityWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -55,17 +87,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2927A2852CB47A3100DDBE9F /* Frameworks */ = {
+		29AEA8A42CC9C7A700DDAA3B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2927A28F2CB47A3100DDBE9F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				29AEA8A92CC9C7A700DDAA3B /* SwiftUI.framework in Frameworks */,
+				29AEA8A82CC9C7A700DDAA3B /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,9 +102,9 @@
 		2927A26F2CB47A3000DDBE9F = {
 			isa = PBXGroup;
 			children = (
-				2927A27A2CB47A3000DDBE9F /* Flight Radar V1 */,
-				2927A28B2CB47A3100DDBE9F /* Flight Radar V1Tests */,
-				2927A2952CB47A3100DDBE9F /* Flight Radar V1UITests */,
+				29374DB52CC6C45300B48E17 /* Flight Radar V1 */,
+				29AEA8AA2CC9C7A700DDAA3B /* FlightActivityWidget */,
+				29A0FE392CBC7C600087C16F /* Frameworks */,
 				2927A2792CB47A3000DDBE9F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,10 +113,18 @@
 			isa = PBXGroup;
 			children = (
 				2927A2782CB47A3000DDBE9F /* Flight Radar V1.app */,
-				2927A2882CB47A3100DDBE9F /* Flight Radar V1Tests.xctest */,
-				2927A2922CB47A3100DDBE9F /* Flight Radar V1UITests.xctest */,
+				29AEA8A72CC9C7A700DDAA3B /* FlightActivityWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		29A0FE392CBC7C600087C16F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29A0FE3A2CBC7C600087C16F /* WidgetKit.framework */,
+				29A0FE3C2CBC7C600087C16F /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,13 +137,15 @@
 				2927A2742CB47A3000DDBE9F /* Sources */,
 				2927A2752CB47A3000DDBE9F /* Frameworks */,
 				2927A2762CB47A3000DDBE9F /* Resources */,
+				29A0FE532CBC7C610087C16F /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				29AEA8B92CC9C7A900DDAA3B /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				2927A27A2CB47A3000DDBE9F /* Flight Radar V1 */,
+				29374DB52CC6C45300B48E17 /* Flight Radar V1 */,
 			);
 			name = "Flight Radar V1";
 			packageProductDependencies = (
@@ -117,51 +154,27 @@
 			productReference = 2927A2782CB47A3000DDBE9F /* Flight Radar V1.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2927A2872CB47A3100DDBE9F /* Flight Radar V1Tests */ = {
+		29AEA8A62CC9C7A700DDAA3B /* FlightActivityWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2927A29F2CB47A3100DDBE9F /* Build configuration list for PBXNativeTarget "Flight Radar V1Tests" */;
+			buildConfigurationList = 29AEA8BC2CC9C7A900DDAA3B /* Build configuration list for PBXNativeTarget "FlightActivityWidgetExtension" */;
 			buildPhases = (
-				2927A2842CB47A3100DDBE9F /* Sources */,
-				2927A2852CB47A3100DDBE9F /* Frameworks */,
-				2927A2862CB47A3100DDBE9F /* Resources */,
+				29AEA8A32CC9C7A700DDAA3B /* Sources */,
+				29AEA8A42CC9C7A700DDAA3B /* Frameworks */,
+				29AEA8A52CC9C7A700DDAA3B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2927A28A2CB47A3100DDBE9F /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				2927A28B2CB47A3100DDBE9F /* Flight Radar V1Tests */,
+				29AEA8AA2CC9C7A700DDAA3B /* FlightActivityWidget */,
 			);
-			name = "Flight Radar V1Tests";
+			name = FlightActivityWidgetExtension;
 			packageProductDependencies = (
 			);
-			productName = "Flight Radar V1Tests";
-			productReference = 2927A2882CB47A3100DDBE9F /* Flight Radar V1Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		2927A2912CB47A3100DDBE9F /* Flight Radar V1UITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2927A2A22CB47A3100DDBE9F /* Build configuration list for PBXNativeTarget "Flight Radar V1UITests" */;
-			buildPhases = (
-				2927A28E2CB47A3100DDBE9F /* Sources */,
-				2927A28F2CB47A3100DDBE9F /* Frameworks */,
-				2927A2902CB47A3100DDBE9F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2927A2942CB47A3100DDBE9F /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				2927A2952CB47A3100DDBE9F /* Flight Radar V1UITests */,
-			);
-			name = "Flight Radar V1UITests";
-			packageProductDependencies = (
-			);
-			productName = "Flight Radar V1UITests";
-			productReference = 2927A2922CB47A3100DDBE9F /* Flight Radar V1UITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			productName = FlightActivityWidgetExtension;
+			productReference = 29AEA8A72CC9C7A700DDAA3B /* FlightActivityWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -176,13 +189,8 @@
 					2927A2772CB47A3000DDBE9F = {
 						CreatedOnToolsVersion = 16.0;
 					};
-					2927A2872CB47A3100DDBE9F = {
+					29AEA8A62CC9C7A700DDAA3B = {
 						CreatedOnToolsVersion = 16.0;
-						TestTargetID = 2927A2772CB47A3000DDBE9F;
-					};
-					2927A2912CB47A3100DDBE9F = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = 2927A2772CB47A3000DDBE9F;
 					};
 				};
 			};
@@ -201,8 +209,7 @@
 			projectRoot = "";
 			targets = (
 				2927A2772CB47A3000DDBE9F /* Flight Radar V1 */,
-				2927A2872CB47A3100DDBE9F /* Flight Radar V1Tests */,
-				2927A2912CB47A3100DDBE9F /* Flight Radar V1UITests */,
+				29AEA8A62CC9C7A700DDAA3B /* FlightActivityWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -215,14 +222,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2927A2862CB47A3100DDBE9F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2927A2902CB47A3100DDBE9F /* Resources */ = {
+		29AEA8A52CC9C7A700DDAA3B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -239,14 +239,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2927A2842CB47A3100DDBE9F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2927A28E2CB47A3100DDBE9F /* Sources */ = {
+		29AEA8A32CC9C7A700DDAA3B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,15 +249,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2927A28A2CB47A3100DDBE9F /* PBXTargetDependency */ = {
+		29AEA8B92CC9C7A900DDAA3B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2927A2772CB47A3000DDBE9F /* Flight Radar V1 */;
-			targetProxy = 2927A2892CB47A3100DDBE9F /* PBXContainerItemProxy */;
-		};
-		2927A2942CB47A3100DDBE9F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2927A2772CB47A3000DDBE9F /* Flight Radar V1 */;
-			targetProxy = 2927A2932CB47A3100DDBE9F /* PBXContainerItemProxy */;
+			target = 29AEA8A62CC9C7A700DDAA3B /* FlightActivityWidgetExtension */;
+			targetProxy = 29AEA8B82CC9C7A900DDAA3B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -396,8 +384,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Flight Radar V1/Preview Content\"";
+				DEVELOPMENT_TEAM = SL27C35ACN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -424,8 +414,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Flight Radar V1/Preview Content\"";
+				DEVELOPMENT_TEAM = SL27C35ACN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -444,71 +436,57 @@
 			};
 			name = Release;
 		};
-		2927A2A02CB47A3100DDBE9F /* Debug */ = {
+		29AEA8BD2CC9C7A900DDAA3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SL27C35ACN;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				INFOPLIST_FILE = FlightActivityWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FlightActivityWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.franciscutti.Flight-Radar-V1Tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.franciscutti.Flight-Radar-V1.FlightActivityWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Flight Radar V1.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Flight Radar V1";
 			};
 			name = Debug;
 		};
-		2927A2A12CB47A3100DDBE9F /* Release */ = {
+		29AEA8BE2CC9C7A900DDAA3B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SL27C35ACN;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				INFOPLIST_FILE = FlightActivityWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FlightActivityWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.franciscutti.Flight-Radar-V1Tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.franciscutti.Flight-Radar-V1.FlightActivityWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Flight Radar V1.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Flight Radar V1";
-			};
-			name = Release;
-		};
-		2927A2A32CB47A3100DDBE9F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.franciscutti.Flight-Radar-V1UITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Flight Radar V1";
-			};
-			name = Debug;
-		};
-		2927A2A42CB47A3100DDBE9F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.franciscutti.Flight-Radar-V1UITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Flight Radar V1";
 			};
 			name = Release;
 		};
@@ -533,20 +511,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2927A29F2CB47A3100DDBE9F /* Build configuration list for PBXNativeTarget "Flight Radar V1Tests" */ = {
+		29AEA8BC2CC9C7A900DDAA3B /* Build configuration list for PBXNativeTarget "FlightActivityWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2927A2A02CB47A3100DDBE9F /* Debug */,
-				2927A2A12CB47A3100DDBE9F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2927A2A22CB47A3100DDBE9F /* Build configuration list for PBXNativeTarget "Flight Radar V1UITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2927A2A32CB47A3100DDBE9F /* Debug */,
-				2927A2A42CB47A3100DDBE9F /* Release */,
+				29AEA8BD2CC9C7A900DDAA3B /* Debug */,
+				29AEA8BE2CC9C7A900DDAA3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
