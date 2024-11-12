@@ -47,7 +47,7 @@
 		2976EC6E2CE1201D009A31E9 /* Exceptions for "Flight Radar V1" folder in "FlightActivityWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				FlightActivityWidgetAttributes.swift,
+				Model/FlightActivityWidgetAttributes.swift,
 			);
 			target = 29AEA8A62CC9C7A700DDAA3B /* FlightActivityWidgetExtension */;
 		};

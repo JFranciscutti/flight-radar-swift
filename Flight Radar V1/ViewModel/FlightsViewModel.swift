@@ -13,6 +13,7 @@ class FlightsViewModel: ObservableObject {
     @Published var flights: [Flight] = []
     @Published var favoriteFlights: [Flight] = []
     @Published var selectedFlight: Flight? = nil
+    @Published var currentFlight: Flight? = nil
 
     init() {
         flights = mockedFlights
@@ -28,6 +29,10 @@ class FlightsViewModel: ObservableObject {
               favoriteFlights.append(selectedFlight)
           }
        
+    }
+    
+    func markAsCurrent (id: UUID) {
+        currentFlight = flights.first(where: { $0.id == id })
     }
     
     func selectFlight (flight: Flight) {

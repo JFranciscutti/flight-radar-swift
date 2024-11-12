@@ -33,8 +33,8 @@ struct FlightMapView: View {
                     FlightDetailsView(flightsViewModel: flightsViewModel, liveActivityViewModel:liveActivityViewModel)
                     
                 }
+                .transition(.move(edge: .bottom))
                 .animation(.easeInOut, value: flightsViewModel.selectedFlight)
-                .padding(.bottom, 20)
             }
             
         }
