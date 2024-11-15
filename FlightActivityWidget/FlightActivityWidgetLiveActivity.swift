@@ -13,10 +13,8 @@ import Foundation
 struct FlightActivityWidgetLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: FlightActivityWidgetAttributes.self) { context in
-            // Lock screen/banner UI goes here
             VStack {
                 HStack {
-            
                     VStack {
                         Text(context.state.departure)
                             .fontWeight(.bold)
@@ -24,109 +22,96 @@ struct FlightActivityWidgetLiveActivity: Widget {
                             .multilineTextAlignment(.center)
                         
                         Text(context.state.departureCity).foregroundColor(Color.white)
-
                     }
                     
                     Image(systemName: "airplane.circle.fill")
                         .scaledToFill()
                         .padding(.horizontal)
                         .tint(Color.yellow)
-                        
                     
                     VStack {
-                        Text(context.state.destination) .fontWeight(.bold)
-                            .multilineTextAlignment(.center)                            .foregroundColor(Color.white)
-
+                        Text(context.state.destination)
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(Color.white)
                         
-                        Text(context.state.destinationCity)                            .foregroundColor(Color.white)
-
+                        Text(context.state.destinationCity).foregroundColor(Color.white)
                     }
                 }
                 
                 VStack {
                     HStack {
-                        Text("Actual 9:20")
+                        Text("Despegue \(formattedDepartureTime(context.state.departureTime))")
                             .font(.caption)
                             .fontWeight(.bold)
                             .foregroundColor(Color.white)
 
                         Spacer()
-                        Text("Estimated 11:52").font(.caption)
+                        Text("Llegada \(formattedArrivalTime(context.state.arrivalTime))")
+                            .font(.caption)
                             .fontWeight(.bold)
                             .foregroundColor(Color.green)
-                            .foregroundColor(Color.white)
-
                     }
                     
                     ProgressView(value: context.state.progress)
-                                    .progressViewStyle(LinearProgressViewStyle())
+                        .progressViewStyle(LinearProgressViewStyle())
+                        .tint(Color.yellow)
                     
                     HStack {
-                        Text("Departed 4:40 ago").font(.caption)
+                        Text("Salió hace \(formattedTimeElapsed(context.state.departureTime))hs")
+                            .font(.caption)
                             .fontWeight(.bold)
                             .foregroundColor(Color.white)
 
-                            Spacer()
-                        
-
-                        Text("Arriving in 2:15").font(.caption)
-                            .fontWeight(.bold)                            .foregroundColor(Color.white)
-
+                        Spacer()
+                        Text("LLega en \(formattedTimeRemaining(context.state.timeRemaining)) hs")
+                            .font(.caption)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.white)
                     }
-                }.padding(.horizontal).padding(.top, 8.0)
-            }.padding().background(Color(red: 0.224, green: 0.224, blue: 0.224))
-
+                }
+                .padding(.horizontal)
+                .padding(.top, 8.0)
+            }
+            .padding()
+            .background(Color(red: 0.224, green: 0.224, blue: 0.224))
         } dynamicIsland: { context in
             DynamicIsland {
-                // Expanded UI goes here. Compose the expanded UI through
-                // various regions, like leading/trailing/center/bottom
                 DynamicIslandExpandedRegion(.leading) {
-                    
-                    HStack {
-                        Text("\(context.state.flightNumber)")
-                            .fontWeight(.bold)
-                            .foregroundColor(Color.yellow)
-                            .multilineTextAlignment(.center)
-                    }.padding(.horizontal, 8.0)
-                        
+                    Text(context.state.flightNumber)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.yellow)
+                        .padding(.horizontal, 8.0)
                 }
-                //DynamicIslandExpandedRegion(.trailing) {
-                   // Text("ETA: \(formattedArrivalTime(context.state.arrivalTime))")
-                //}
                 DynamicIslandExpandedRegion(.bottom) {
                     VStack {
-                        
                         HStack {
-                    
                             VStack {
                                 Text(context.state.departure)
                                     .fontWeight(.bold)
                                     .multilineTextAlignment(.center)
-                                
                                 Text(context.state.departureCity)
                             }
-                            
                             Image(systemName: "airplane.circle.fill")
                                 .scaledToFill()
                                 .padding(.horizontal)
                                 .tint(Color.yellow)
-                                
-                            
                             VStack {
-                                Text(context.state.destination) .fontWeight(.bold)
+                                Text(context.state.destination)
+                                    .fontWeight(.bold)
                                     .multilineTextAlignment(.center)
-                                
                                 Text(context.state.destinationCity)
                             }
                         }
                         
                         VStack {
                             HStack {
-                                Text("Actual 9:20")
+                                Text("Despegue \(formattedDepartureTime(context.state.departureTime))")
                                     .font(.caption)
                                     .fontWeight(.bold)
                                 Spacer()
-                                Text("Estimated 11:52").font(.caption)
+                                Text("Llegada \(formattedArrivalTime(context.state.arrivalTime))")
+                                    .font(.caption)
                                     .fontWeight(.bold)
                                     .foregroundColor(Color.green)
                             }
@@ -136,31 +121,31 @@ struct FlightActivityWidgetLiveActivity: Widget {
                                 .tint(Color.yellow)
                             
                             HStack {
-                                Text("Departed 4:40 ago").font(.caption)
+                                Text("Salió hace \(formattedTimeElapsed(context.state.departureTime))hs")
+                                    .font(.caption)
                                     .fontWeight(.bold)
-                                    Spacer()
-
-                                Text("Arriving in 2:15").font(.caption)
+                                Spacer()
+                                Text("Llega en \(formattedTimeRemaining(context.state.timeRemaining))hs")
+                                    .font(.caption)
                                     .fontWeight(.bold)
                             }
-                        }.padding(.horizontal).padding(.top, 8.0)
+                        }
+                        .padding(.horizontal)
+                        .padding(.top, 8.0)
                     }
                 }
             } compactLeading: {
-                Text(context.state.flightNumber).fontWeight(.bold).foregroundColor(Color.yellow)
+                Text(context.state.flightNumber)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.yellow)
             } compactTrailing: {
                 Text(formattedTimeRemaining(context.state.timeRemaining))
             } minimal: {
-                VStack {
-                    Image(systemName: "airplane")
-                }
-                
-
+                Image(systemName: "airplane")
             }
             .widgetURL(URL(string: "http://www.example.com"))
             .keylineTint(Color.red)
         }
-        
     }
     
     private func formattedTimeRemaining(_ time: TimeInterval) -> String {
@@ -169,12 +154,24 @@ struct FlightActivityWidgetLiveActivity: Widget {
         return String(format: "%02d:%02d", hours, minutes)
     }
 
+    private func formattedDepartureTime(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        return formatter.string(from: date)
+    }
+
     private func formattedArrivalTime(_ date: Date) -> String {
         let formatter = DateFormatter()
         formatter.timeStyle = .short
         return formatter.string(from: date)
     }
+
+    private func formattedTimeElapsed(_ departureTime: Date) -> String {
+        let elapsed = Date().timeIntervalSince(departureTime)
+        return formattedTimeRemaining(elapsed)
+    }
 }
+
 
 extension FlightActivityWidgetAttributes {
     fileprivate static var preview: FlightActivityWidgetAttributes {

@@ -23,12 +23,12 @@ struct ContentView: View {
                     VStack {
                         FlightMapView(flightsViewModel: flightsViewModel, liveActivityViewModel: liveActivityViewModel)
                     }
-                    .ignoresSafeArea(edges: .bottom)
+                    .toolbar(.hidden, for: .tabBar)
                     .tag(0)
                     
-                    Text("Favoritos").tag(1)
+                    FavoritesView(flightsViewModel: flightsViewModel).tag(1)
                     
-                    Text("Ayuda").tag(2)
+                    HelpAndFAQView().tag(2)
                 }
                 
                 SideMenuView(isShowing: $showMenu, selectedTab: $selectedTab)
@@ -36,7 +36,6 @@ struct ContentView: View {
             .toolbar(showMenu ? .hidden : .visible, for: .navigationBar)
             .toolbarBackground(Color(red: 0.18, green: 0.309, blue: 0.426),
                                for: .navigationBar)
-            .navigationTitle("Radar de vuelos")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                     ToolbarItem(placement: .topBarLeading) {

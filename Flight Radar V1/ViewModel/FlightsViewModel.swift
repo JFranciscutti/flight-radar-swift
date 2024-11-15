@@ -11,12 +11,20 @@ import CoreLocation
 
 class FlightsViewModel: ObservableObject {
     @Published var flights: [Flight] = []
-    @Published var favoriteFlights: [Flight] = []
+    @Published var favoriteFlights: [Flight] = [] {
+        didSet {
+            saveFavorites()
+        }
+    }
     @Published var selectedFlight: Flight? = nil
     @Published var currentFlight: Flight? = nil
 
+    private let favoritesKey = "favoriteFlights"
+
+
     init() {
         flights = mockedFlights
+        loadFavorites()
         //startFetchingLiveFlights()
     }
     
@@ -51,6 +59,30 @@ class FlightsViewModel: ObservableObject {
            return favoriteFlights.contains(selectedFlight!)
         }
     }
+    
+    func removeFavorite(at offsets: IndexSet) {
+          favoriteFlights.remove(atOffsets: offsets)
+      }
+    
+    
+    private func saveFavorites() {
+        do {
+            let encodedData = try JSONEncoder().encode(favoriteFlights)
+            UserDefaults.standard.set(encodedData, forKey: favoritesKey)
+        } catch {
+            print("Error saving favorites: \(error.localizedDescription)")
+        }
+    }
+
+    private func loadFavorites() {
+        guard let savedData = UserDefaults.standard.data(forKey: favoritesKey) else { return }
+        do {
+            favoriteFlights = try JSONDecoder().decode([Flight].self, from: savedData)
+        } catch {
+            print("Error loading favorites: \(error.localizedDescription)")
+        }
+    }
+
 
     private func getAccessToken(completion: @escaping (String?) -> Void) {
         let url = URL(string: "https://test.api.amadeus.com/v1/security/oauth2/token")!

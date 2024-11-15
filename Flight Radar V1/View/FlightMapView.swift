@@ -24,7 +24,7 @@ struct FlightMapView: View {
                             }
                     }
                 }
-            }
+            }.edgesIgnoringSafeArea(.all)
             
             // Vista con información del vuelo seleccionado
             if flightsViewModel.selectedFlight != nil {

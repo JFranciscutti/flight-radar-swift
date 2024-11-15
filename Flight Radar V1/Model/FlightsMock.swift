@@ -9,7 +9,8 @@ import Foundation
 import CoreLocation
 
 let mockedFlights: [Flight] = [
-    Flight(flightNumber: "AA123",
+    Flight(
+        flightNumber: "AA123",
            departure: "JFK",
            departureCity: "New York",
            departureTime: Date().addingTimeInterval(-3600),

@@ -1,5 +1,5 @@
 //
-//  HeaderVIew.swift
+//  HeaderView.swift
 //  Flight Radar V1
 //
 //  Created by Joaquin Franciscutti on 11/11/2024.
@@ -23,7 +23,7 @@ struct HeaderView: View {
                     .font(.subheadline)
                     .tint(.blue)
                 
-                Text("Flight Radar V1")
+                Text("Radar App")
                     .font(.footnote)
                     .tint(.gray)
             }

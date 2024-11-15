@@ -32,9 +32,11 @@ struct FlightDetailsView: View {
             
             VStack {
                 Button("Seguir vuelo en vivo") {
-                    if let selectedFlight = flightsViewModel.selectedFlight {
-                        liveActivityViewModel.startLiveActivity(flight: selectedFlight)
-                    }
+                        if let selectedFlight = flightsViewModel.selectedFlight {
+                             liveActivityViewModel.startLiveActivity(flight: selectedFlight)
+                        }
+                    
+                    
                 }
                 .padding(.top)
                 .alert(isPresented: $liveActivityViewModel.showAlert) {
