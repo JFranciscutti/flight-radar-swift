@@ -38,18 +38,18 @@ struct ContentView: View {
                                for: .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Button(action: {
-                            showMenu.toggle()
-                        }, label: {
-                            Image(systemName: "line.3.horizontal")
-                        })
-                    }
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: {
+                        showMenu.toggle()
+                    }, label: {
+                        Image(systemName: "line.3.horizontal")
+                    })
                 }
-           
+            }
+            
         }
         
-
+        
     }
     
 }

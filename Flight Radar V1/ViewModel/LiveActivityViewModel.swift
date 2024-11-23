@@ -11,97 +11,76 @@ import CoreLocation
 import ActivityKit
 import SwiftUI
 
-@MainActor // Garantiza que las actualizaciones sean seguras para la interfaz de usuario
+@MainActor
 class LiveActivityViewModel: ObservableObject {
-    
     @Published var showAlert: Bool = false
-    private var activity: Activity<FlightActivityWidgetAttributes>? = nil
-    private var timer: Timer?
+    @Published var activityIdentifier: String = ""
     
-    func startLiveActivity(flight: Flight) {
+    func startParsingLiveActivity(flight: Flight) {
         guard ActivityAuthorizationInfo().areActivitiesEnabled else {
             print("Live Activities not enabled")
             return
         }
         
-        // Detén cualquier actividad previa
-        stopLiveActivity()
-        
-        let attributes = FlightActivityWidgetAttributes(name: "Flight \(flight.flightNumber)")
-        let initialContentState = FlightActivityWidgetAttributes.ContentState(
-            flightNumber: flight.flightNumber,
-            departure: flight.departure,
-            departureCity: flight.departureCity,
-            departureTime: flight.departureTime,
-            destination: flight.destination,
-            destinationCity: flight.destinationCity,
-            arrivalTime: flight.arrivalTime,
-            timeRemaining: calculateTimeRemaining(timeElapsed: Date(), totalTime: flight.arrivalTime)
-        )
-        
-        Task {
-            do {
-                activity = try Activity<FlightActivityWidgetAttributes>.request(
-                    attributes: attributes,
-                    contentState: initialContentState,
-                    pushType: nil
-                )
-                // Inicia el temporizador para actualizar el estado dinámicamente
-                startTimer(flight: flight)
-                showAlert.toggle()
-            } catch {
-                print("Failed to start live activity: \(error)")
-            }
-        }
-    }
-    
-    private func startTimer(flight: Flight) {
-        // Programa actualizaciones cada minuto
-        timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [weak self] _ in
-            guard let self = self else { return }
-            Task {
-                await self.updateLiveActivity(flight: flight)
-            }
-        }
-    }
-    
-    private func stopLiveActivity() {
-        timer?.invalidate()
-        timer = nil
-        
-        // Termina la actividad en curso si existe
-        Task {
-            do {
-                try await activity?.end(dismissalPolicy: .immediate)
-            } catch {
-                print("Failed to end live activity: \(error)")
-            }
-        }
-        activity = nil
-    }
-    
-    private func updateLiveActivity(flight: Flight) async {
-        guard let activity = activity else { return }
-        
-        let updatedContentState = FlightActivityWidgetAttributes.ContentState(
-            flightNumber: flight.flightNumber,
-            departure: flight.departure,
-            departureCity: flight.departureCity,
-            departureTime: flight.departureTime,
-            destination: flight.destination,
-            destinationCity: flight.destinationCity,
-            arrivalTime: flight.arrivalTime,
-            timeRemaining: calculateTimeRemaining(timeElapsed: Date(), totalTime: flight.arrivalTime)
-        )
+        let attributes = FlightActivityWidgetAttributes(name: "Flight \(flight.flightNumber)", flightNumber: flight.flightNumber, departure: flight.departure, departureCity: flight.departureCity, departureTime: flight.departureTime, destination: flight.destination, destinationCity: flight.destinationCity, arrivalTime: flight.arrivalTime)
         
         do {
-            try await activity.update(using: updatedContentState)
+            activityIdentifier = try startLiveActivity(for: attributes)
+            showAlert.toggle()
         } catch {
-            print("Failed to update live activity: \(error)")
+            print(error)
+        }
+        
+    }
+    
+    private func startLiveActivity(for flight: FlightActivityWidgetAttributes) throws -> String {
+        let initialState = FlightActivityWidgetAttributes.ContentState.updatedState(
+            departureTime: flight.departureTime,
+            arrivalTime: flight.arrivalTime
+        )
+        
+        let activityContent = ActivityContent(state: initialState, staleDate: Date().addingTimeInterval(60))
+    
+        
+        do {
+            let activity = try Activity.request(
+                attributes: flight,
+                content: activityContent,
+                pushType: nil
+            )
+            
+            print("Requested a Live Activity with id \(activity.id)")
+            
+            return activity.id
+            
+        } catch {
+            print("Failed to request a Live Activity: \(error.localizedDescription)")
+            throw error
         }
     }
     
-    private func calculateTimeRemaining(timeElapsed: Date, totalTime: Date) -> TimeInterval {
-        return max(totalTime.timeIntervalSince(timeElapsed), 0) // Asegura que no devuelva valores negativos
+    func endLiveActivity(activityIdentifier: String) async {
+        let activity = Activity<FlightActivityWidgetAttributes>.activities.first { $0.id == activityIdentifier }
+        await activity?.end(nil)
+    }
+    
+    
+    func updateLiveActivity(activityIdentifier: String, flight: FlightActivityWidgetAttributes) async {
+        print("Live Activity updating.")
+        print(activityIdentifier)
+        
+        let updatedState = FlightActivityWidgetAttributes.ContentState.updatedState(
+            departureTime: flight.departureTime,
+            arrivalTime: flight.arrivalTime
+        )
+        
+        let activity = Activity<FlightActivityWidgetAttributes>.activities.first { $0.id == activityIdentifier }
+        
+        let activityContent = ActivityContent(state: updatedState, staleDate: Date().addingTimeInterval(60))
+        
+        await activity?.update(activityContent)
+        print("Live Activity updated.")
+        
     }
 }
+

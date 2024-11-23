@@ -10,7 +10,7 @@ import SwiftUI
 struct FlightDetailsView: View {
     @ObservedObject var flightsViewModel: FlightsViewModel
     @ObservedObject var liveActivityViewModel: LiveActivityViewModel
-        
+    
     var body: some View {
         VStack(alignment: .center, spacing: 20.0) {
             HStack(alignment: .center) {
@@ -32,9 +32,9 @@ struct FlightDetailsView: View {
             
             VStack {
                 Button("Seguir vuelo en vivo") {
-                        if let selectedFlight = flightsViewModel.selectedFlight {
-                             liveActivityViewModel.startLiveActivity(flight: selectedFlight)
-                        }
+                    if let selectedFlight = flightsViewModel.selectedFlight {
+                        liveActivityViewModel.startParsingLiveActivity(flight: selectedFlight)
+                    }
                     
                     
                 }
@@ -49,7 +49,7 @@ struct FlightDetailsView: View {
                     )
                 }
             }
-           
+            
         }
         .frame(width: 250.0, height: 350.0)
         .background(Color.white)

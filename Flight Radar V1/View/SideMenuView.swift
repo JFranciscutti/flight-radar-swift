@@ -36,14 +36,14 @@ struct SideMenuView: View {
                         
                         Spacer()
                     }.padding()
-                    .frame(width:270, alignment: .leading)
+                        .frame(width:270, alignment: .leading)
                         .background(.white)
                     
                     Spacer()
                 }
             }
         }.transition(.move(edge: .leading))
-        .animation(.easeInOut, value: isShowing)
+            .animation(.easeInOut, value: isShowing)
     }
     
     private func onOptionTapped(_ option: SideMenuOptionModel) {

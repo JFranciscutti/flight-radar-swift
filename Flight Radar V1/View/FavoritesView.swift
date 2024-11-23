@@ -22,7 +22,7 @@ struct FavoritesView: View {
                 } else {
                     List {
                         ForEach(flightsViewModel.favoriteFlights) { flight in
-                                FlightRowView(flight: flight)
+                            FlightRowView(flight: flight)
                                 .swipeActions {
                                     Button(role: .destructive) {
                                         if let index = flightsViewModel.favoriteFlights.firstIndex(where: { $0.id == flight.id }) {
@@ -33,18 +33,23 @@ struct FavoritesView: View {
                                     }
                                 }
                         }
-                       
+                        
                     }
                     .listStyle(InsetGroupedListStyle())
+                   
+                    
                 }
             }
             .navigationTitle("Vuelos Favoritos")
+            .refreshable {
+                flightsViewModel.refetchLocalData()
+            }
         }
     }
     
     private func deleteFavorite(at offsets: IndexSet) {
         flightsViewModel.removeFavorite(at: offsets)
-       }
+    }
 }
 
 struct FlightRowView: View {
@@ -96,12 +101,12 @@ struct FlightRowView: View {
                 Text("Altitud:")
                     .font(.caption)
                     .fontWeight(.bold)
-                Text("\(flight.altitude) pies")
+                Text("\(flight.altitude)")
                 Spacer()
                 Text("Velocidad:")
                     .font(.caption)
                     .fontWeight(.bold)
-                Text("\(flight.speed) km/h")
+                Text("\(flight.speed)")
             }
         }
         .padding()

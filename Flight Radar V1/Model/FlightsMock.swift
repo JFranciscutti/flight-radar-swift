@@ -8,18 +8,24 @@
 import Foundation
 import CoreLocation
 
+func isFlightNumberInDataFlights(_ flightNumber: String) -> Bool {
+    return mockedFlights.contains { flight in
+        flight.flightNumber == flightNumber
+    }
+}
+
 let mockedFlights: [Flight] = [
     Flight(
         flightNumber: "AA123",
-           departure: "JFK",
-           departureCity: "New York",
-           departureTime: Date().addingTimeInterval(-3600),
-           destination: "LAX",
-           destinationCity: "Los Angeles",
-           arrivalTime: Date().addingTimeInterval(4200),
-           coordinate: CLLocationCoordinate2D(latitude: -38.9754, longitude: 150.12),
-           altitude: "35,000 ft",
-           speed: "550 mph"
+        departure: "JFK",
+        departureCity: "New York",
+        departureTime: Date().addingTimeInterval(-3600),
+        destination: "LAX",
+        destinationCity: "Los Angeles",
+        arrivalTime: Date().addingTimeInterval(4200),
+        coordinate: CLLocationCoordinate2D(latitude: -38.9754, longitude: 150.12),
+        altitude: "35,000 ft",
+        speed: "550 mph"
     ),
     
     Flight(flightNumber: "NZ5817",
@@ -32,7 +38,7 @@ let mockedFlights: [Flight] = [
            coordinate: CLLocationCoordinate2D(latitude: -41.3403, longitude: 174.806),
            altitude: "34,000 ft",
            speed: "540 mph"
-    ),
+          ),
     
     Flight(flightNumber: "SU5617",
            departure: "SVO",
@@ -44,7 +50,7 @@ let mockedFlights: [Flight] = [
            coordinate: CLLocationCoordinate2D(latitude: 50.8808, longitude: 149.046),
            altitude: "36,000 ft",
            speed: "560 mph"
-    ),
+          ),
     
     Flight(flightNumber: "B77L",
            departure: "ATL",
@@ -56,7 +62,7 @@ let mockedFlights: [Flight] = [
            coordinate: CLLocationCoordinate2D(latitude: 34.847, longitude: 68.9363),
            altitude: "39,000 ft",
            speed: "590 mph"
-    ),
+          ),
     
     Flight(flightNumber: "A319",
            departure: "MIA",
@@ -68,8 +74,8 @@ let mockedFlights: [Flight] = [
            coordinate: CLLocationCoordinate2D(latitude: 58.2105, longitude: 39.582),
            altitude: "32,000 ft",
            speed: "520 mph"
-    ),
-
+          ),
+    
     Flight(flightNumber: "AF007",
            departure: "JFK",
            departureCity: "New York",
@@ -80,7 +86,7 @@ let mockedFlights: [Flight] = [
            coordinate: CLLocationCoordinate2D(latitude: 40.7128, longitude: -74.0060),
            altitude: "33,000 ft",
            speed: "530 mph"
-    ),
+          ),
     
     Flight(flightNumber: "QF12",
            departure: "SYD",
@@ -92,7 +98,7 @@ let mockedFlights: [Flight] = [
            coordinate: CLLocationCoordinate2D(latitude: -33.8688, longitude: 151.2093),
            altitude: "38,000 ft",
            speed: "580 mph"
-    ),
+          ),
     
     Flight(flightNumber: "LH401",
            departure: "JFK",
@@ -104,7 +110,7 @@ let mockedFlights: [Flight] = [
            coordinate: CLLocationCoordinate2D(latitude: 52.5200, longitude: 13.4050),
            altitude: "37,000 ft",
            speed: "570 mph"
-    ),
+          ),
     
     Flight(flightNumber: "EK216",
            departure: "LAX",
@@ -116,7 +122,7 @@ let mockedFlights: [Flight] = [
            coordinate: CLLocationCoordinate2D(latitude: 25.2048, longitude: 55.2708),
            altitude: "40,000 ft",
            speed: "600 mph"
-    ),
+          ),
     
     Flight(flightNumber: "BA283",
            departure: "LHR",
@@ -128,5 +134,5 @@ let mockedFlights: [Flight] = [
            coordinate: CLLocationCoordinate2D(latitude: 51.4700, longitude: -0.4543),
            altitude: "36,000 ft",
            speed: "560 mph"
-    )
+          )
 ]

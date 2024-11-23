@@ -24,7 +24,7 @@ struct Flight: Identifiable, Equatable, Codable {
     let coordinate: CLLocationCoordinate2D
     let altitude: String
     let speed: String
-
+    
     enum CodingKeys: String, CodingKey {
         case id, flightNumber, departure, departureCity, departureTime, destination, destinationCity, arrivalTime, coordinate, altitude, speed
     }
@@ -34,31 +34,31 @@ struct Flight: Identifiable, Equatable, Codable {
     }
     
     init(
-           id: UUID = UUID(),
-           flightNumber: String,
-           departure: String,
-           departureCity: String,
-           departureTime: Date,
-           destination: String,
-           destinationCity: String,
-           arrivalTime: Date,
-           coordinate: CLLocationCoordinate2D,
-           altitude: String,
-           speed: String
-       ) {
-           self.id = id
-           self.flightNumber = flightNumber
-           self.departure = departure
-           self.departureCity = departureCity
-           self.departureTime = departureTime
-           self.destination = destination
-           self.destinationCity = destinationCity
-           self.arrivalTime = arrivalTime
-           self.coordinate = coordinate
-           self.altitude = altitude
-           self.speed = speed
-       }
-
+        id: UUID = UUID(),
+        flightNumber: String,
+        departure: String,
+        departureCity: String,
+        departureTime: Date,
+        destination: String,
+        destinationCity: String,
+        arrivalTime: Date,
+        coordinate: CLLocationCoordinate2D,
+        altitude: String,
+        speed: String
+    ) {
+        self.id = id
+        self.flightNumber = flightNumber
+        self.departure = departure
+        self.departureCity = departureCity
+        self.departureTime = departureTime
+        self.destination = destination
+        self.destinationCity = destinationCity
+        self.arrivalTime = arrivalTime
+        self.coordinate = coordinate
+        self.altitude = altitude
+        self.speed = speed
+    }
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(UUID.self, forKey: .id)
@@ -110,7 +110,7 @@ struct FlightData: Decodable {
         let city: String
         let dateTime: String
     }
-
+    
     struct AircraftData: Decodable {
         let altitude: String
     }

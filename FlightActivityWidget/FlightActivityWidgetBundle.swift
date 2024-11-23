@@ -8,7 +8,6 @@
 import WidgetKit
 import SwiftUI
 
-@main
 struct FlightActivityWidgetBundle: WidgetBundle {
     var body: some Widget {
         FlightActivityWidget()
