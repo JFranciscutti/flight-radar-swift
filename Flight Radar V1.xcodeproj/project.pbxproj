@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2972956A2CF1048D00E44CB5 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297295692CF1048D00E44CB5 /* Intents.framework */; };
-		297295752CF1048D00E44CB5 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297295742CF1048D00E44CB5 /* IntentsUI.framework */; };
-		2972957F2CF1048D00E44CB5 /* FavoriteFlightExtensionUI.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 297295732CF1048D00E44CB5 /* FavoriteFlightExtensionUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		297295822CF1048D00E44CB5 /* FavoriteFlightExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 297295682CF1048D00E44CB5 /* FavoriteFlightExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2942B6402CF3C50300EF9A90 /* FavoriteFlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2942B63F2CF3C50300EF9A90 /* FavoriteFlight.swift */; };
 		29AEA8A82CC9C7A700DDAA3B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A0FE3A2CBC7C600087C16F /* WidgetKit.framework */; };
 		29AEA8A92CC9C7A700DDAA3B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A0FE3C2CBC7C600087C16F /* SwiftUI.framework */; };
 		29AEA8BA2CC9C7A900DDAA3B /* FlightActivityWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 29AEA8A72CC9C7A700DDAA3B /* FlightActivityWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -18,20 +15,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2972957D2CF1048D00E44CB5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2927A2702CB47A3000DDBE9F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 297295722CF1048D00E44CB5;
-			remoteInfo = FavoriteFlightExtensionUI;
-		};
-		297295802CF1048D00E44CB5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2927A2702CB47A3000DDBE9F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 297295672CF1048D00E44CB5;
-			remoteInfo = FavoriteFlightExtension;
-		};
 		29AEA8B82CC9C7A900DDAA3B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2927A2702CB47A3000DDBE9F /* Project object */;
@@ -48,9 +31,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				2972957F2CF1048D00E44CB5 /* FavoriteFlightExtensionUI.appex in Embed Foundation Extensions */,
 				29AEA8BA2CC9C7A900DDAA3B /* FlightActivityWidgetExtension.appex in Embed Foundation Extensions */,
-				297295822CF1048D00E44CB5 /* FavoriteFlightExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,9 +40,8 @@
 
 /* Begin PBXFileReference section */
 		2927A2782CB47A3000DDBE9F /* Flight Radar V1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flight Radar V1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		297295682CF1048D00E44CB5 /* FavoriteFlightExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FavoriteFlightExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2942B63F2CF3C50300EF9A90 /* FavoriteFlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteFlight.swift; sourceTree = "<group>"; };
 		297295692CF1048D00E44CB5 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
-		297295732CF1048D00E44CB5 /* FavoriteFlightExtensionUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FavoriteFlightExtensionUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		297295742CF1048D00E44CB5 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		29A0FE3A2CBC7C600087C16F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		29A0FE3C2CBC7C600087C16F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -70,38 +50,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		293553FB2CF1699400D672DB /* Exceptions for "Flight Radar V1" folder in "FavoriteFlightExtension" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				FavoriteFlightIntent.intentdefinition,
-				Model/Flight.swift,
-				Model/FlightsMock.swift,
-			);
-			target = 297295672CF1048D00E44CB5 /* FavoriteFlightExtension */;
-		};
-		293553FC2CF1699400D672DB /* Exceptions for "Flight Radar V1" folder in "FavoriteFlightExtensionUI" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				FavoriteFlightIntent.intentdefinition,
-				Model/Flight.swift,
-				Model/FlightsMock.swift,
-			);
-			target = 297295722CF1048D00E44CB5 /* FavoriteFlightExtensionUI */;
-		};
-		297295832CF1048D00E44CB5 /* Exceptions for "FavoriteFlightExtension" folder in "FavoriteFlightExtension" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 297295672CF1048D00E44CB5 /* FavoriteFlightExtension */;
-		};
-		297295872CF1048D00E44CB5 /* Exceptions for "FavoriteFlightExtensionUI" folder in "FavoriteFlightExtensionUI" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 297295722CF1048D00E44CB5 /* FavoriteFlightExtensionUI */;
-		};
 		2976EC6E2CE1201D009A31E9 /* Exceptions for "Flight Radar V1" folder in "FlightActivityWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -125,26 +73,8 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				2976EC6E2CE1201D009A31E9 /* Exceptions for "Flight Radar V1" folder in "FlightActivityWidgetExtension" target */,
-				293553FB2CF1699400D672DB /* Exceptions for "Flight Radar V1" folder in "FavoriteFlightExtension" target */,
-				293553FC2CF1699400D672DB /* Exceptions for "Flight Radar V1" folder in "FavoriteFlightExtensionUI" target */,
 			);
 			path = "Flight Radar V1";
-			sourceTree = "<group>";
-		};
-		2972956B2CF1048D00E44CB5 /* FavoriteFlightExtension */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				297295832CF1048D00E44CB5 /* Exceptions for "FavoriteFlightExtension" folder in "FavoriteFlightExtension" target */,
-			);
-			path = FavoriteFlightExtension;
-			sourceTree = "<group>";
-		};
-		297295762CF1048D00E44CB5 /* FavoriteFlightExtensionUI */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				297295872CF1048D00E44CB5 /* Exceptions for "FavoriteFlightExtensionUI" folder in "FavoriteFlightExtensionUI" target */,
-			);
-			path = FavoriteFlightExtensionUI;
 			sourceTree = "<group>";
 		};
 		29AEA8AA2CC9C7A700DDAA3B /* FlightActivityWidget */ = {
@@ -165,22 +95,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		297295652CF1048D00E44CB5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2972956A2CF1048D00E44CB5 /* Intents.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		297295702CF1048D00E44CB5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				297295752CF1048D00E44CB5 /* IntentsUI.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		29AEA8A42CC9C7A700DDAA3B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -196,11 +110,10 @@
 		2927A26F2CB47A3000DDBE9F = {
 			isa = PBXGroup;
 			children = (
+				2942B63F2CF3C50300EF9A90 /* FavoriteFlight.swift */,
 				29EC69C32CE9697B008909E9 /* Launch Screen.storyboard */,
 				29374DB52CC6C45300B48E17 /* Flight Radar V1 */,
 				29AEA8AA2CC9C7A700DDAA3B /* FlightActivityWidget */,
-				2972956B2CF1048D00E44CB5 /* FavoriteFlightExtension */,
-				297295762CF1048D00E44CB5 /* FavoriteFlightExtensionUI */,
 				29A0FE392CBC7C600087C16F /* Frameworks */,
 				2927A2792CB47A3000DDBE9F /* Products */,
 			);
@@ -211,8 +124,6 @@
 			children = (
 				2927A2782CB47A3000DDBE9F /* Flight Radar V1.app */,
 				29AEA8A72CC9C7A700DDAA3B /* FlightActivityWidgetExtension.appex */,
-				297295682CF1048D00E44CB5 /* FavoriteFlightExtension.appex */,
-				297295732CF1048D00E44CB5 /* FavoriteFlightExtensionUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -244,8 +155,6 @@
 			);
 			dependencies = (
 				29AEA8B92CC9C7A900DDAA3B /* PBXTargetDependency */,
-				2972957E2CF1048D00E44CB5 /* PBXTargetDependency */,
-				297295812CF1048D00E44CB5 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				29374DB52CC6C45300B48E17 /* Flight Radar V1 */,
@@ -256,50 +165,6 @@
 			productName = "Flight Radar V1";
 			productReference = 2927A2782CB47A3000DDBE9F /* Flight Radar V1.app */;
 			productType = "com.apple.product-type.application";
-		};
-		297295672CF1048D00E44CB5 /* FavoriteFlightExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 297295842CF1048D00E44CB5 /* Build configuration list for PBXNativeTarget "FavoriteFlightExtension" */;
-			buildPhases = (
-				297295642CF1048D00E44CB5 /* Sources */,
-				297295652CF1048D00E44CB5 /* Frameworks */,
-				297295662CF1048D00E44CB5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				2972956B2CF1048D00E44CB5 /* FavoriteFlightExtension */,
-			);
-			name = FavoriteFlightExtension;
-			packageProductDependencies = (
-			);
-			productName = FavoriteFlightExtension;
-			productReference = 297295682CF1048D00E44CB5 /* FavoriteFlightExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
-		297295722CF1048D00E44CB5 /* FavoriteFlightExtensionUI */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 297295882CF1048D00E44CB5 /* Build configuration list for PBXNativeTarget "FavoriteFlightExtensionUI" */;
-			buildPhases = (
-				2972956F2CF1048D00E44CB5 /* Sources */,
-				297295702CF1048D00E44CB5 /* Frameworks */,
-				297295712CF1048D00E44CB5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				297295762CF1048D00E44CB5 /* FavoriteFlightExtensionUI */,
-			);
-			name = FavoriteFlightExtensionUI;
-			packageProductDependencies = (
-			);
-			productName = FavoriteFlightExtensionUI;
-			productReference = 297295732CF1048D00E44CB5 /* FavoriteFlightExtensionUI.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 		29AEA8A62CC9C7A700DDAA3B /* FlightActivityWidgetExtension */ = {
 			isa = PBXNativeTarget;
@@ -336,12 +201,6 @@
 					2927A2772CB47A3000DDBE9F = {
 						CreatedOnToolsVersion = 16.0;
 					};
-					297295672CF1048D00E44CB5 = {
-						CreatedOnToolsVersion = 16.0;
-					};
-					297295722CF1048D00E44CB5 = {
-						CreatedOnToolsVersion = 16.0;
-					};
 					29AEA8A62CC9C7A700DDAA3B = {
 						CreatedOnToolsVersion = 16.0;
 					};
@@ -363,8 +222,6 @@
 			targets = (
 				2927A2772CB47A3000DDBE9F /* Flight Radar V1 */,
 				29AEA8A62CC9C7A700DDAA3B /* FlightActivityWidgetExtension */,
-				297295672CF1048D00E44CB5 /* FavoriteFlightExtension */,
-				297295722CF1048D00E44CB5 /* FavoriteFlightExtensionUI */,
 			);
 		};
 /* End PBXProject section */
@@ -375,20 +232,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				29EC69C42CE9697B008909E9 /* Launch Screen.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		297295662CF1048D00E44CB5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		297295712CF1048D00E44CB5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,20 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		297295642CF1048D00E44CB5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2972956F2CF1048D00E44CB5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				2942B6402CF3C50300EF9A90 /* FavoriteFlight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,16 +263,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2972957E2CF1048D00E44CB5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 297295722CF1048D00E44CB5 /* FavoriteFlightExtensionUI */;
-			targetProxy = 2972957D2CF1048D00E44CB5 /* PBXContainerItemProxy */;
-		};
-		297295812CF1048D00E44CB5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 297295672CF1048D00E44CB5 /* FavoriteFlightExtension */;
-			targetProxy = 297295802CF1048D00E44CB5 /* PBXContainerItemProxy */;
-		};
 		29AEA8B92CC9C7A900DDAA3B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 29AEA8A62CC9C7A700DDAA3B /* FlightActivityWidgetExtension */;
@@ -648,110 +468,6 @@
 			};
 			name = Release;
 		};
-		297295852CF1048D00E44CB5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = FavoriteFlightExtension/FavoriteFlightExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = PU43PQ4Q34;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FavoriteFlightExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = FavoriteFlightExtension;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.franciscutti.Flight-Radar-V1.FavoriteFlightExtension";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		297295862CF1048D00E44CB5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = FavoriteFlightExtension/FavoriteFlightExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = PU43PQ4Q34;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FavoriteFlightExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = FavoriteFlightExtension;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.franciscutti.Flight-Radar-V1.FavoriteFlightExtension";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		297295892CF1048D00E44CB5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = FavoriteFlightExtensionUI/FavoriteFlightExtensionUI.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = PU43PQ4Q34;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FavoriteFlightExtensionUI/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = FavoriteFlightExtensionUI;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.franciscutti.Flight-Radar-V1.FavoriteFlightExtensionUI";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		2972958A2CF1048D00E44CB5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = FavoriteFlightExtensionUI/FavoriteFlightExtensionUI.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = PU43PQ4Q34;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FavoriteFlightExtensionUI/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = FavoriteFlightExtensionUI;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.franciscutti.Flight-Radar-V1.FavoriteFlightExtensionUI";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		29AEA8BD2CC9C7A900DDAA3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -823,24 +539,6 @@
 			buildConfigurations = (
 				2927A29D2CB47A3100DDBE9F /* Debug */,
 				2927A29E2CB47A3100DDBE9F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		297295842CF1048D00E44CB5 /* Build configuration list for PBXNativeTarget "FavoriteFlightExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				297295852CF1048D00E44CB5 /* Debug */,
-				297295862CF1048D00E44CB5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		297295882CF1048D00E44CB5 /* Build configuration list for PBXNativeTarget "FavoriteFlightExtensionUI" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				297295892CF1048D00E44CB5 /* Debug */,
-				2972958A2CF1048D00E44CB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

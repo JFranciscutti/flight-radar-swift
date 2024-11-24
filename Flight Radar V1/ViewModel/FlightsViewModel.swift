@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  FlightsViewModel.swift
 //  Flight Radar V1
 //
 //  Created by Joaquin Franciscutti on 10/11/2024.
