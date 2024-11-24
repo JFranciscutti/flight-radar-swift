@@ -66,6 +66,8 @@
 				<dict>
 					<key>INIntentParameterConfigurable</key>
 					<true/>
+					<key>INIntentParameterCustomDisambiguation</key>
+					<true/>
 					<key>INIntentParameterDisplayName</key>
 					<string>Numero de vuelo</string>
 					<key>INIntentParameterDisplayNameID</key>
@@ -141,15 +143,43 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeConciseFormatString</key>
-						<string>No se pudo agregar el vuelo a favoritos</string>
+						<string>No se pudo agregar el vuelo ${flightNumber} a favoritos</string>
 						<key>INIntentResponseCodeConciseFormatStringID</key>
 						<string>PTaVPR</string>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>No se pudo agregar el vuelo a favoritos</string>
+						<string>No se pudo agregar el vuelo ${flightNumber} a favoritos</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>NdmjYK</string>
 						<key>INIntentResponseCodeName</key>
 						<string>failure</string>
+					</dict>
+					<dict>
+						<key>INIntentResponseCodeConciseFormatString</key>
+						<string>El vuelo ${flightNumber} ya está en favoritos</string>
+						<key>INIntentResponseCodeConciseFormatStringID</key>
+						<string>x4wH5d</string>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>El vuelo ${flightNumber} ya está en favoritos</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>paEWyC</string>
+						<key>INIntentResponseCodeName</key>
+						<string>alreadyInFavorites</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>INIntentResponseCodeConciseFormatString</key>
+						<string>El vuelo ${flightNumber} no ha sido  encontrado</string>
+						<key>INIntentResponseCodeConciseFormatStringID</key>
+						<string>lF1c72</string>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>El vuelo ${flightNumber} no ha sido encontrado</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>Hyz8W5</string>
+						<key>INIntentResponseCodeName</key>
+						<string>notFound</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<true/>
 					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>

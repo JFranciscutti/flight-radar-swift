@@ -34,10 +34,20 @@ class FavoriteFlightHandler: NSObject, FavoriteFlightIntentHandling {
     
     func handle(intent: FavoriteFlightIntent, completion: @escaping (FavoriteFlightIntentResponse) -> Void) {
         if let number = intent.flightNumber {
-            if isFlightNumberInDataFlights(number) {
-                markAsFavorite(flightNumber: number)
+            // Check if flight doesn't exist in mocked flights
+            if !isFlightNumberInDataFlights(number) {
+                completion(FavoriteFlightIntentResponse.failure(flightNumber: number))
+                return
             }
             
+            // Check if flight is already in favorites
+            if isFlightInFavorites(number) {
+                completion(FavoriteFlightIntentResponse.alreadyInFavorites(flightNumber: number))
+                return
+            }
+            
+            // If we reach here, the flight exists and is not in favorites
+            markAsFavorite(flightNumber: number)
             completion(FavoriteFlightIntentResponse.success(flightNumber: number))
         }
     }
@@ -85,7 +95,6 @@ class FavoriteFlightHandler: NSObject, FavoriteFlightIntentHandling {
                return false
            }
            
-           print(favoriteFlights.count)
            return favoriteFlights.contains { $0.flightNumber == flightNumber }
        }
     
