@@ -11,36 +11,41 @@ import Intents
 
 @main
 struct Flight_Radar_V1App: App {
-    
     init() {
-        donateIntent()
+        configureAndDonateSiriIntent()
     }
     
     var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
+          WindowGroup {
+              ContentView()
+          }
+      }
     
-    
-    
-    
-    func donateIntent() {
-        let intent = FavoriteFlightIntent()
-        intent.suggestedInvocationPhrase = "Agregar vuelo a favoritos"
-        intent.flightNumber = "AA123"
-        
-        let interaction = INInteraction(intent: intent, response: nil)
-        
-        interaction.donate() {(error) in
+    private func configureAndDonateSiriIntent() {
+        Task {
+            // Donate favorite flight intent
+            let favoriteIntent = FavoriteFlight()
+            favoriteIntent.flightNumber = "AA123"
+            _ = try? await favoriteIntent.donate()
             
-            if error != nil {
-                if let error = error as NSError? {
-                    print("Interaction donated failed with error: \(error.description)")
-                } else {
-                    print("Successful donation")
-                }
-            }
+            // Update shortcuts
+            RadarAppShortcuts.updateAppShortcutParameters()
         }
     }
+}
+
+struct RadarAppShortcuts: AppShortcutsProvider {
+    static var appShortcuts: [AppShortcut] {
+        AppShortcut(
+            intent: FavoriteFlight(),
+            phrases: [
+                "Agregar vuelo a favoritos en \(.applicationName)",
+                "Guardar vuelo en \(.applicationName)",
+                "Añadir vuelo a \(.applicationName)"
+            ],
+            shortTitle: "Agregar vuelo a favoritos",
+            systemImageName: "star.fill"
+        )
+    }
+    
 }

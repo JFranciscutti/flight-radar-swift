@@ -26,27 +26,28 @@ enum FavoriteFlightError: LocalizedError {
 }
 
 @available(iOS 16.0, macOS 13.0, watchOS 9.0, tvOS 16.0, *)
-struct FavoriteFlight: AppIntent, CustomIntentMigratedAppIntent, PredictableIntent {
-    static let intentClassName = "FavoriteFlightIntent"
-
-    static var title: LocalizedStringResource = "Vuelo Favorito"
-    static var description = IntentDescription("Agrega un vuelo a favoritos")
-
-    @Parameter(title: "Numero de vuelo")
-    var flightNumber: String?
-
-    static var parameterSummary: some ParameterSummary {
-        Summary("Agregar vuelo \(\.$flightNumber) a favoritos")
-    }
-
-    static var predictionConfiguration: some IntentPredictionConfiguration {
-        IntentPrediction(parameters: (\.$flightNumber)) { flightNumber in
-            DisplayRepresentation(
-                title: "Agregar vuelo \(flightNumber!) a favoritos",
-                subtitle: ""
-            )
-        }
-    }
+struct FavoriteFlight: AppIntent {
+    static var title: LocalizedStringResource = "Agregar vuelo a favoritos"
+       static var description: IntentDescription = IntentDescription(
+           "Agrega un vuelo a tu lista de favoritos",
+           categoryName: "Vuelos"
+       )
+       
+       @Parameter(title: "Número de vuelo", description: "El número del vuelo a agregar")
+       var flightNumber: String?
+       
+       static var parameterSummary: some ParameterSummary {
+           Summary("Agregar \(\.$flightNumber) a favoritos")
+       }
+//
+//    static var predictionConfiguration: some IntentPredictionConfiguratiİon {
+//        IntentPrediction(parameters: (\.$flightNumber)) { flightNumber in
+//            DisplayRepresentation(
+//                title: "Agregar vuelo \(flightNumber!) a favoritos",
+//                subtitle: ""
+//            )
+//        }
+//    }
 
     static var suggestedInvocationPhrase: String {
         "Agregar vuelo a favoritos en Radar App"
@@ -108,7 +109,7 @@ struct FavoriteFlight: AppIntent, CustomIntentMigratedAppIntent, PredictableInte
 @available(iOS 16.0, macOS 13.0, watchOS 9.0, tvOS 16.0, *)
 fileprivate extension IntentDialog {
     static func flightNumberParameterPrompt(flightNumber: String) -> Self {
-        "Agrega el vuelo \(flightNumber) a favoritos en Radar App"
+        "Sigue el vuelo \(flightNumber) en Radar App"
     }
     static var flightNumberParameterEmpty: Self {
         "El numero de vuelo no puede ser vacio"

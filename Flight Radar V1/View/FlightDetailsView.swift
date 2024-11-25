@@ -52,7 +52,7 @@ struct FlightDetailsView: View {
             
         }
         .frame(width: 250.0, height: 350.0)
-        .background(Color.white)
+        .background(Color(uiColor: .systemBackground))
         .cornerRadius(10)
         .shadow(radius: 10)
     }

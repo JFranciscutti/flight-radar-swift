@@ -15,21 +15,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="illustration-2" translatesAutoresizingMaskIntoConstraints="NO" id="ba3-zI-ZwK">
-                                <rect key="frame" x="0.0" y="244" width="393" height="367"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Radar App" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="GJd-Yh-RWb">
-                                <rect key="frame" x="0.0" y="145" width="393" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radar App" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="GJd-Yh-RWb">
+                                <rect key="frame" x="109.33333333333333" y="171" width="174.66666666666669" height="43"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                 <color key="textColor" red="0.20000001789999999" green="0.30196079609999998" blue="0.4196078479" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustration-2" translatesAutoresizingMaskIntoConstraints="NO" id="ba3-zI-ZwK">
+                                <rect key="frame" x="0.0" y="291" width="393" height="270"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.20000001789999999" green="0.30196079609999998" blue="0.4196078479" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="ba3-zI-ZwK" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="0xq-n8-OJA"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="ba3-zI-ZwK" secondAttribute="bottom" constant="257" id="9YE-Lz-hHS"/>
+                            <constraint firstItem="ba3-zI-ZwK" firstAttribute="top" secondItem="GJd-Yh-RWb" secondAttribute="bottom" constant="77" id="C4u-oh-1Gs"/>
+                            <constraint firstItem="ba3-zI-ZwK" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="L3r-DE-h8B"/>
+                            <constraint firstItem="ba3-zI-ZwK" firstAttribute="centerX" secondItem="GJd-Yh-RWb" secondAttribute="centerX" id="leU-o5-ryq"/>
+                            <constraint firstItem="ba3-zI-ZwK" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="yBU-Nk-oBC"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

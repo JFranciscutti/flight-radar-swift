@@ -12,7 +12,7 @@ struct HeaderView: View {
         HStack {
             Image(systemName: "person.circle.fill")
                 .imageScale(.large)
-                .foregroundColor(.white)
+                .foregroundColor(Color(UIColor.systemBackground))
                 .frame(width: 48, height: 48)
                 .background(.blue)
                 .clipShape(RoundedRectangle(cornerRadius: 10))

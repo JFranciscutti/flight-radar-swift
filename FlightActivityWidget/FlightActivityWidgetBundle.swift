@@ -10,8 +10,6 @@ import SwiftUI
 
 struct FlightActivityWidgetBundle: WidgetBundle {
     var body: some Widget {
-        FlightActivityWidget()
-        FlightActivityWidgetControl()
         FlightActivityWidgetLiveActivity()
     }
 }
