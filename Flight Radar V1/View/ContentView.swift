@@ -11,10 +11,19 @@ import ActivityKit
 import Foundation
 
 struct ContentView: View {
-    @StateObject var flightsViewModel = FlightsViewModel()
-    @StateObject var liveActivityViewModel = LiveActivityViewModel()
+    @StateObject private var flightsViewModel: FlightsViewModel
+    @StateObject private var liveActivityViewModel: LiveActivityViewModel
+    
     @State private var showMenu = false
     @State private var selectedTab = 0
+
+    init(
+        flightService: FlightServiceProtocol = FlightService(),
+        liveActivityService: LiveActivityServiceProtocol = LiveActivityService()
+    ) {
+        _flightsViewModel = StateObject(wrappedValue: FlightsViewModel(flightService: flightService))
+        _liveActivityViewModel = StateObject(wrappedValue: LiveActivityViewModel(liveActivityService: liveActivityService))
+    }
     
     var body: some View {
         NavigationStack {

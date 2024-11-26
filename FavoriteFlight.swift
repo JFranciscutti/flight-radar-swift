@@ -109,7 +109,7 @@ struct FavoriteFlight: AppIntent {
 @available(iOS 16.0, macOS 13.0, watchOS 9.0, tvOS 16.0, *)
 fileprivate extension IntentDialog {
     static func flightNumberParameterPrompt(flightNumber: String) -> Self {
-        "Sigue el vuelo \(flightNumber) en Radar App"
+        "Sigue el vuelo \(flightNumber)"
     }
     static var flightNumberParameterEmpty: Self {
         "El numero de vuelo no puede ser vacio"
