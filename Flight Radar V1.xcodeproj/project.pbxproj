@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		292D42E02CF67DEF00C09D19 /* ShowFlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292D42DF2CF67DE900C09D19 /* ShowFlight.swift */; };
 		2942B6402CF3C50300EF9A90 /* FavoriteFlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2942B63F2CF3C50300EF9A90 /* FavoriteFlight.swift */; };
 		29AEA8A82CC9C7A700DDAA3B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A0FE3A2CBC7C600087C16F /* WidgetKit.framework */; };
 		29AEA8A92CC9C7A700DDAA3B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A0FE3C2CBC7C600087C16F /* SwiftUI.framework */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		2927A2782CB47A3000DDBE9F /* Flight Radar V1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flight Radar V1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		292D42DF2CF67DE900C09D19 /* ShowFlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowFlight.swift; sourceTree = "<group>"; };
 		2942B63F2CF3C50300EF9A90 /* FavoriteFlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteFlight.swift; sourceTree = "<group>"; };
 		297295692CF1048D00E44CB5 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		297295742CF1048D00E44CB5 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
@@ -110,6 +112,7 @@
 		2927A26F2CB47A3000DDBE9F = {
 			isa = PBXGroup;
 			children = (
+				292D42DF2CF67DE900C09D19 /* ShowFlight.swift */,
 				2942B63F2CF3C50300EF9A90 /* FavoriteFlight.swift */,
 				29EC69C32CE9697B008909E9 /* Launch Screen.storyboard */,
 				29374DB52CC6C45300B48E17 /* Flight Radar V1 */,
@@ -249,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				292D42E02CF67DEF00C09D19 /* ShowFlight.swift in Sources */,
 				2942B6402CF3C50300EF9A90 /* FavoriteFlight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
